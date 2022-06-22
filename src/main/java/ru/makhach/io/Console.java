@@ -1,7 +1,7 @@
 package ru.makhach.io;
 
 import ru.makhach.dialog.DirectoryOpener;
-import ru.makhach.processor.FileProcessor;
+import ru.makhach.processor.FilesProcessor;
 import ru.makhach.utils.Logger;
 
 import java.nio.file.Path;
@@ -23,8 +23,8 @@ public class Console {
             MergedFile mergedFile = new MergedFile("/home/xamelion/text");
             Optional<Path> selectedDirectory = opener.getSelectedDirectory();
             if (selectedDirectory.isPresent()) {
-                FileProcessor fileProcessor = new FileProcessor(selectedDirectory.get(), mergedFile);
-                fileProcessor.mergeTextFiles();
+                FilesProcessor filesProcessor = new FilesProcessor(selectedDirectory.get(), mergedFile);
+                filesProcessor.mergeTextFiles();
             } else
                 logger.log("An error occurred while reading the directory!");
         }

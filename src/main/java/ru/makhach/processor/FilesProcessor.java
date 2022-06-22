@@ -13,20 +13,20 @@ import java.util.List;
 /**
  * Класс, отвечает за обработку файлов
  */
-public class FileProcessor {
+public class FilesProcessor {
     private final Path rootDirectory;
     private final List<Path> files;
     private final MergedFile mergedFile;
     private final Logger logger;
 
-    public FileProcessor(Path rootDirectory, MergedFile mergedFile) {
+    public FilesProcessor(Path rootDirectory, MergedFile mergedFile) {
         this.rootDirectory = rootDirectory;
         this.mergedFile = mergedFile;
         this.files = new ArrayList<>();
         this.logger = Logger.getInstance();
     }
 
-    public FileProcessor(Path rootDirectory) {
+    public FilesProcessor(Path rootDirectory) {
         this.rootDirectory = rootDirectory;
         this.mergedFile = new MergedFile(System.getProperty("user.dir"));
         this.files = new ArrayList<>();
